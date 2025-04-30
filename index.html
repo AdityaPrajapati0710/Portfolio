@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Prajapati </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add AOS library for scroll animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body>
+    <header>
+        <div class="split-letters">
+            <div class="letter-container">
+                <img class="hover-logo" src="/images/Gemini_Generated_Image_9d28389d28389d28-removebg-preview.png"
+                    alt="P Logo">
+                <span class="name-text">ditya..</span>
+            </div>
+        </div>
+
+        <nav id="main-nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+          
+        </nav>
+        <button class="btn" onclick="window.open('Aditya_Resume.pdf')">Download CV</button>
+        <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section class="home-section" id="home">
+        <div class="home-text" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Hi, I am <span class="typing-text">Aditya Prajapati!</span></h1>
+            <p>I'm a <strong class="highlight-text">Data Analyst</strong> with a passion for working with data to drive business decisions.</p>
+            <div class="home-buttons">
+                <button class="btn pulse-btn" onclick="window.open('Aditya_Resume.pdf')">Download CV</button>
+                <button class="btn" style="background: #f0f0f0; color: #333;">Learn More</button>
+            </div>
+        </div>
+        <div class="circle-img" data-aos="zoom-in" data-aos-duration="1000">
+            <video id="myVideo" src="/Scene-1.mp4" muted></video>
+        </div>
+        <div class="scroll-down" data-aos="fade-up" data-aos-delay="300">
+            Scroll Down
+            <div style="display: flex; justify-content: center; align-items: center; height: 50px;">
+                <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+                <dotlottie-player 
+                    src="https://lottie.host/de831e67-7526-440f-bde2-c898ab621ab0/qnQRdEqg6u.lottie"
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 40px; height: 40px;" 
+                    loop 
+                    autoplay>
+                </dotlottie-player>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 data-aos="fade-right">About Me</h2>
+        <div class="about-content">
+            <div class="about-left" data-aos="fade-up" data-aos-delay="200">
+                <p>With a strong foundation in data analytics, I specialize in transforming raw data into meaningful
+                    insights. I have expertise in Power BI, Python, and SQL, helping businesses make data-driven
+                    decisions efficiently.</p>
+                <div class="about-cards">
+                    <div class="about-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="counter" data-target="0">Fresher</div>
+                        <div>Years Experience</div>
+                    </div>
+                    <div class="about-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="counter" data-target="4">0</div>
+                        <div>Projects Completed</div>
+                    </div>
+                    <!-- <div class="about-card" data-aos="flip-left" data-aos-delay="400">
+                        <div class="counter" data-target="3">0</div>
+                        <div>Certifications</div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="about-right" data-aos="fade-up" data-aos-delay="400">
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">Key Skills</h3>
+                <div class="skill-bar">
+                    <span><span>Data Analytics</span><span>Power BI, Tableau</span></span>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-animation" style="width: 0%" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span><span>Programming</span><span>Python (Pandas, NumPy)</span></span>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-animation" style="width: 0%" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span><span>Web Technologies</span><span>HTML, CSS</span></span>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-animation" style="width: 0%" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span><span>Soft Skills</span><span>Problem-solving, Critical Thinking</span></span>
+                    <div class="bar">
+                        <div class="bar-fill bar-fill-animation" style="width: 0%" data-width="100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills-section" id="skills">
+        <h2 data-aos="fade-down">Skills</h2>
+        <p class="skills-description" data-aos="fade-up" data-aos-delay="200">
+            Here are the technologies and tools I work with to analyze data and create insightful visualizations.
+        </p>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <h3>Python</h3>
+                <span class="level">Advanced</span>
+            </div>
+
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="/images/icons8-power-bi-2021-48.png" alt="Power BI">
+                <h3>Power BI</h3>
+                <span class="level expert">Expert</span>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                <h3>Pandas</h3>
+                <span class="level">Advanced</span>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                <h3>NumPy</h3>
+                <span class="level">Intermediate</span>
+            </div>
+
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <h3>HTML</h3>
+                <span class="level">Advanced</span>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                <h3>CSS</h3>
+                <span class="level">Advanced</span>
+            </div>
+        </div>
+    </section>
+    <section class="projects-section" id="projects">
+        <h2 data-aos="fade-down">Projects</h2>
+        <p class="projects-description" data-aos="fade-up" data-aos-delay="200">
+            Here are some of my recent data analysis projects that showcase my skills and experience.
+        </p>
+        <div class="projects-grid">
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-img-container">
+                    <img src="/images/glassdoor-new-20235206.logowik.com.webp" alt="Glassdoor Logo" />
+                </div>
+                <h3>Glassdoor Company Analysis</h3>
+                <p>Analysis of employee reviews and satisfaction metrics for top tech companies using Glassdoor data.
+                </p>
+                <div class="tags">
+                    <span>Power BI</span>
+                    <span>Python</span>
+                    <span>Data Cleaning</span>
+                    <a href="https://github.com/AdityaPrajapati0710/Analysis_of_Company_Reviews.git" target="_blank"
+                        class="view-link">View <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-img-container">
+                    <img src="/images/mutual fund.png" alt="Mutual Fund India Analysis" />
+                </div>
+                <h3>Mutual Fund India Analysis</h3>
+                <p>Performance analysis of top mutual funds in India, including risk assessment and return projections.
+                </p>
+                <div class="tags">
+                    <span>Tableau</span>
+                    <span>Python</span>
+                    <span>Financial Analysis</span>
+                    <a href="https://github.com/AdityaPrajapati0710/Mutual-Fund_Analysis.git" target="_blank"
+                        class="view-link">View <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-img-container">
+                    <img src="/images/mutual fund.png" alt="NIFTY 50 Stock Market Analysis" />
+                </div>
+                <h3>NIFTY 50 Stock Market Analysis</h3>
+                <p>Technical and fundamental analysis of NIFTY 50 stocks with predictive modeling for future
+                    performance.</p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Stocks Analysis</span>
+                    <span>Visualization</span>
+                    <a href="https://github.com/AdityaPrajapati0710/NIFTY50-Data-Analysis.git" target="_blank"
+                        class="view-link">View <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+     <!-- <section class="certificates-section" id="certificates">
+        <h2 data-aos="fade-down">Certificates</h2>
+        <p class="certificates-description" data-aos="fade-up" data-aos-delay="200">
+            I'm committed to continuous learning. Here are some of my professional certifications.
+        </p>
+
+       <div class="certificates-grid">
+
+            <div class="certificate-card" data-aos="flip-up" data-aos-delay="100">
+                <div class="certificate-header">
+                    <h3>Python for Data Science</h3>
+                    <i class="certificate-icon fas fa-medal"></i>
+                </div>
+                <p>Issued by Coursera</p>
+                <p>Date: January 2023</p>
+                <p>Credential ID: CRED123456</p>
+                <a href="#" target="_blank" class="view-link">View Certificate <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+            <div class="certificate-card" data-aos="flip-up" data-aos-delay="200">
+                <div class="certificate-header">
+                    <h3>Power BI Analytics</h3>
+                    <i class="certificate-icon fas fa-medal"></i>
+                </div>
+                <p>Issued by Microsoft</p>
+                <p>Date: May 2023</p>
+                <p>Credential ID: MS-PBI-7890</p>
+                <a href="#" target="_blank" class="view-link">View Certificate <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+            <div class="certificate-card" data-aos="flip-up" data-aos-delay="300">
+                <div class="certificate-header">
+                    <h3>Machine Learning Basics</h3>
+                    <i class="certificate-icon fas fa-medal"></i>
+                </div>
+                <p>Issued by DataCamp</p>
+                <p>Date: October 2023</p>
+                <p>Credential ID: DC-ML-5432</p>
+                <a href="#" target="_blank" class="view-link">View Certificate <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+        </div>
+    </section> -->
+
+    <footer class="footer-section">
+        <div class="footer-content">
+
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                <h3>Aditya Prajapati</h3>
+                <p>Data Analyst passionate about transforming data into actionable insights.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/AdityaPrajapati0710"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aditya-prajapati0710/"><i class="fab fa-linkedin-in"></i></a>
+                    
+                </div>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                   
+                </ul>
+            </div>
+
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra, India</p>
+                <p><i class="fas fa-envelope"></i> ap728991@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +91 74208 02674</p>
+            </div>
+
+        </div>
+
+        <hr />
+
+        <p class="footer-bottom">© 2025 Data Analyst Portfolio. All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: false
+        });
+
+        // Navigation active state
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Add smooth scrolling to all links
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                }
+                
+                // Get target section
+                const href = this.getAttribute('href');
+                const targetSection = document.querySelector(href);
+                
+                // Scroll to target section
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Update active state
+                navLinks.forEach(lnk => lnk.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Header shrink on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update active navigation based on scroll position
+            const scrollPosition = window.scrollY;
+            
+            // Get all sections
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Auto-play video
+        window.addEventListener('load', function () {
+            const video = document.getElementById('myVideo');
+            video.play().catch(error => {
+                console.log('Autoplay failed:', error);
+            });
+        });
+
+        // Skills bar animation
+        const skillsSection = document.querySelector('.about-right');
+        
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.bar-fill-animation');
+            skillBars.forEach(bar => {
+                const targetWidth = bar.getAttribute('data-width');
+                bar.style.width = targetWidth;
+            });
+        }
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                if (counter.getAttribute('data-target') === '0') return;
+                
+                const targetNum = parseInt(counter.getAttribute('data-target'));
+                const count = +counter.innerText;
+                const increment = targetNum / speed;
+
+                if (count < targetNum) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 50);
+                } else {
+                    counter.innerText = targetNum + '+';
+                }
+            });
+        }
+
+        // Intersection Observer for animations
+        const aboutSection = document.querySelector('#about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(aboutSection);
+
+        // Highlight text animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const highlightText = document.querySelector('.highlight-text');
+            setInterval(() => {
+                highlightText.classList.toggle('blink');
+            }, 1500);
+            
+            // Typing animation for name
+            const typingText = document.querySelector('.typing-text');
+            const originalText = typingText.textContent;
+            typingText.textContent = '';
+            
+            let charIndex = 0;
+            function typeWriter() {
+                if (charIndex < originalText.length) {
+                    typingText.textContent += originalText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            // Start typing after a short delay
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+</body>
+
+</html>
