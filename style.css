@@ -1004,7 +1004,7 @@ hr {
     /* Home Section */
     .home-section {
         flex-direction: column;
-        padding: 120px 20px 100px;
+        padding: 60px 20px 100px;
         text-align: center;
     }
 
