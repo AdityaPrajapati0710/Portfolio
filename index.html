@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#296bff">
+    <meta name="description" content="Aditya Prajapati - Data Analyst Portfolio">
     <title>Aditya Prajapati </title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -24,8 +26,8 @@
     <header>
         <div class="split-letters">
             <div class="letter-container">
-                <img class="hover-logo" src="images/Gemini_Generated_Image_9d28389d28389d28-removebg-preview.png"
-                    alt="P Logo">
+                <img class="hover-logo" src="/images/Gemini_Generated_Image_9d28389d28389d28-removebg-preview.png"
+                    alt="P Logo" width="40" height="40" loading="eager">
                 <span class="name-text">ditya..</span>
             </div>
         </div>
@@ -55,7 +57,7 @@
             </div>
         </div>
         <div class="circle-img" data-aos="zoom-in" data-aos-duration="1000">
-            <video id="myVideo" src="Scene-1.mp4" muted></video>
+            <video id="myVideo" src="/Scene-1.mp4" muted></video>
         </div>
         <div class="scroll-down" data-aos="fade-up" data-aos-delay="300">
             Scroll Down
@@ -137,7 +139,7 @@
             </div>
 
             <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="images/icons8-power-bi-2021-48.png" alt="Power BI">
+                <img src="/images/icons8-power-bi-2021-48.png" alt="Power BI">
                 <h3>Power BI</h3>
                 <span class="level expert">Expert</span>
             </div>
@@ -173,7 +175,7 @@
 
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-img-container">
-                    <img src="images/glassdoor-new-20235206.logowik.com.webp" alt="Glassdoor Logo" />
+                    <img src="/images/glassdoor-new-20235206.logowik.com.webp" alt="Glassdoor Logo" loading="lazy" width="250" height="150" />
                 </div>
                 <h3>Glassdoor Company Analysis</h3>
                 <p>Analysis of employee reviews and satisfaction metrics for top tech companies using Glassdoor data.
@@ -189,7 +191,7 @@
 
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-img-container">
-                    <img src="images/mutual fund.png" alt="Mutual Fund India Analysis" />
+                    <img src="/images/mutual fund.png" alt="Mutual Fund India Analysis" loading="lazy" width="250" height="150" />
                 </div>
                 <h3>Mutual Fund India Analysis</h3>
                 <p>Performance analysis of top mutual funds in India, including risk assessment and return projections.
@@ -205,7 +207,7 @@
 
             <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-img-container">
-                    <img src="images/mutual fund.png" alt="NIFTY 50 Stock Market Analysis" />
+                    <img src="/images/mutual fund.png" alt="NIFTY 50 Stock Market Analysis" loading="lazy" width="250" height="150" />
                 </div>
                 <h3>NIFTY 50 Stock Market Analysis</h3>
                 <p>Technical and fundamental analysis of NIFTY 50 stocks with predictive modeling for future
@@ -221,7 +223,7 @@
 
         </div>
     </section>
-     
+  
 
     <footer class="footer-section">
         <div class="footer-content">
@@ -264,14 +266,73 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Initialize AOS animations
+        // Initialize AOS animations with device-specific configurations
         AOS.init({
             duration: 800,
-            once: false
+            once: false,
+            // Disable animations on mobile for better performance
+            disable: window.innerWidth < 768 || 
+                     (window.innerWidth <= 1024 && window.innerHeight <= 850) || // Disable on landscape tablets
+                     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         });
+
+        // Better device detection for touch devices
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                   (navigator.maxTouchPoints > 0) ||
+                   (navigator.msMaxTouchPoints > 0));
+        };
 
         // Navigation active state
         const navLinks = document.querySelectorAll('nav a');
+        const hamburger = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+        const header = document.querySelector('header');
+
+        // Set navigation item indexes for staggered animation
+        navLinks.forEach((link, index) => {
+            link.style.setProperty('--nav-index', index);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mainNav.classList.contains('active') && 
+                !e.target.closest('#main-nav') && 
+                !e.target.closest('#hamburger-menu')) {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('active');
+                
+                // Enable body scroll when menu closes
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Handle touch events for mobile devices
+        if (isTouchDevice()) {
+            // Add specific touch event handling if needed
+            document.addEventListener('touchstart', function(e) {
+                // Only track touch start position for potential swipe to close menu
+                if (mainNav.classList.contains('active')) {
+                    const touchStartX = e.touches[0].clientX;
+                    
+                    document.addEventListener('touchend', function handleTouchEnd(e) {
+                        const touchEndX = e.changedTouches[0].clientX;
+                        const diffX = touchStartX - touchEndX;
+                        
+                        // If swiped left, close the menu (for right-side menu)
+                        if (diffX > 70) { // threshold for swipe
+                            hamburger.classList.remove('active');
+                            mainNav.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                        
+                        // Remove this listener after processing
+                        document.removeEventListener('touchend', handleTouchEnd);
+                    });
+                }
+            });
+        }
+
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
                 // Add smooth scrolling to all links
@@ -281,15 +342,21 @@
                 if (hamburger.classList.contains('active')) {
                     hamburger.classList.remove('active');
                     mainNav.classList.remove('active');
+                    
+                    // Enable body scroll when menu closes
+                    document.body.style.overflow = '';
                 }
                 
                 // Get target section
                 const href = this.getAttribute('href');
                 const targetSection = document.querySelector(href);
                 
-                // Scroll to target section
+                // Calculate header height for scroll offset
+                const headerHeight = header.offsetHeight;
+                
+                // Scroll to target section with dynamic header height
                 window.scrollTo({
-                    top: targetSection.offsetTop - 70,
+                    top: targetSection.offsetTop - headerHeight,
                     behavior: 'smooth'
                 });
                 
@@ -300,31 +367,48 @@
         });
 
         // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger-menu');
-        const mainNav = document.getElementById('main-nav');
-
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent document click event
             hamburger.classList.toggle('active');
             mainNav.classList.toggle('active');
+            
+            // Disable body scroll when menu is open to prevent background scrolling
+            if (mainNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
 
-        // Header shrink on scroll
-        const header = document.querySelector('header');
+        // Header shrink on scroll with debounce for performance
+        let scrollTimer;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            clearTimeout(scrollTimer);
             
-            // Update active navigation based on scroll position
+            scrollTimer = setTimeout(() => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Update active navigation based on scroll position
+                updateActiveNavOnScroll();
+            }, 10);
+        });
+
+        // Separate function to update active nav to improve performance
+        function updateActiveNavOnScroll() {
             const scrollPosition = window.scrollY;
             
             // Get all sections
             const sections = document.querySelectorAll('section');
             
+            // Calculate header height for accurate section detection
+            const headerHeight = header.offsetHeight;
+            
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop - headerHeight - 20; // 20px buffer
                 const sectionHeight = section.offsetHeight;
                 const sectionId = section.getAttribute('id');
                 
@@ -337,14 +421,31 @@
                     });
                 }
             });
-        });
+        }
 
-        // Auto-play video
+        // Auto-play video with fallback for mobile
         window.addEventListener('load', function () {
             const video = document.getElementById('myVideo');
-            video.play().catch(error => {
-                console.log('Autoplay failed:', error);
-            });
+            if (video) {
+                // Preload the video for faster startup on supported devices
+                video.preload = 'auto';
+                
+                // Some mobile browsers prevent autoplay, so we need to handle errors
+                video.play().catch(error => {
+                    console.log('Autoplay failed:', error);
+                    // Try to play without sound as fallback
+                    video.muted = true;
+                    video.play().catch(err => {
+                        console.log('Muted autoplay also failed:', err);
+                        
+                        // As a final fallback, try playing on user interaction
+                        document.addEventListener('touchstart', function playVideoOnce() {
+                            video.play().catch(e => console.log('User interaction play failed:', e));
+                            document.removeEventListener('touchstart', playVideoOnce);
+                        }, { once: true });
+                    });
+                });
+            }
         });
 
         // Skills bar animation
@@ -379,7 +480,7 @@
             });
         }
 
-        // Intersection Observer for animations
+        // Intersection Observer for animations - more efficient than scroll events
         const aboutSection = document.querySelector('#about');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -389,33 +490,77 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3, rootMargin: '0px 0px -100px 0px' });
 
-        observer.observe(aboutSection);
+        if (aboutSection) {
+            observer.observe(aboutSection);
+        }
 
         // Highlight text animation
         document.addEventListener('DOMContentLoaded', function() {
             const highlightText = document.querySelector('.highlight-text');
-            setInterval(() => {
-                highlightText.classList.toggle('blink');
-            }, 1500);
-            
-            // Typing animation for name
-            const typingText = document.querySelector('.typing-text');
-            const originalText = typingText.textContent;
-            typingText.textContent = '';
-            
-            let charIndex = 0;
-            function typeWriter() {
-                if (charIndex < originalText.length) {
-                    typingText.textContent += originalText.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeWriter, 100);
-                }
+            if (highlightText) {
+                setInterval(() => {
+                    highlightText.classList.toggle('blink');
+                }, 1500);
             }
             
-            // Start typing after a short delay
-            setTimeout(typeWriter, 1000);
+            // Typing animation for name with device-specific speed
+            const typingText = document.querySelector('.typing-text');
+            if (typingText) {
+                const originalText = typingText.textContent;
+                typingText.textContent = '';
+                
+                // Faster typing on mobile for better UX
+                const typingSpeed = window.innerWidth < 768 ? 50 : 100;
+                
+                let charIndex = 0;
+                function typeWriter() {
+                    if (charIndex < originalText.length) {
+                        typingText.textContent += originalText.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, typingSpeed);
+                    }
+                }
+                
+                // Start typing after a short delay
+                setTimeout(typeWriter, 800);
+            }
+        });
+
+        // Handle window resize with debounce for better performance
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Refresh AOS animations
+                AOS.refresh();
+                
+                // Reset mobile menu if window is resized to desktop width
+                if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                // Update active nav on resize
+                updateActiveNavOnScroll();
+            }, 250);
+        });
+        
+        // Check for orientation change specifically for mobile devices
+        window.addEventListener('orientationchange', function() {
+            // Close mobile menu when orientation changes
+            if (mainNav.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // Force refresh AOS after orientation change
+            setTimeout(function() {
+                AOS.refresh();
+            }, 300);
         });
     </script>
 </body>
